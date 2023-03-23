@@ -1,0 +1,33 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.descargar {
+    background-color: v.$grisClaro;
+    padding: 5rem 0;
+
+    &__grid {
+        display: flex;
+        flex-direction: column-reverse;
+        @include m.desktop {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5rem;
+        }
+    }
+
+    &__imagen {
+        width: 50%;
+        margin: 5rem auto 0 auto;
+        transition-property: transform;
+        transition-duration: 300ms;
+
+        @include m.desktop {
+            margin-top: 0;
+        }
+
+        &:hover {
+            transform: rotate(4deg) scale(1.1);
+        }
+    }
+}
